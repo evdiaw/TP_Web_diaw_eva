@@ -44,9 +44,19 @@
         <label for="password_conf">Confirmation du mot de passe : </label>
         <input [(ngModel)]="password_conf"/>
     </div>
-
-    <button  (click)="clic()" >Envoyer</button>
     
-    <app-comp2 [client]="client" (change)="clicChange($event)"></app-comp2>
+    <app-comp2 
+    [prenom]="prenom" 
+    [nom]="nom" 
+    [adresse]="adresse" 
+    [code_postal]="code_postal"
+    [ville]="ville"
+    [telephone]="telephone"
+    [email]="email"
+    [login]="login" 
+    (change)="clicChange($event)"></app-comp2>
 
-    </div>
+    <br/> <br/>
+    {{bonjour}}
+
+</div>

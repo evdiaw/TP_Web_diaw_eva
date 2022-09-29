@@ -8,30 +8,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class Comp2Component implements OnInit {
 
   constructor() { }
-  // @Input() prenom : String = ""; 
-  // @Input() nom : String = ""; 
-  // @Input() civilite : String = ""; 
-  // @Input() adresse : String = ""; 
-  // @Input() code_postal : Number = 0; 
-  // @Input() ville : String = ""; 
-  // @Input() telephone : Number = 0; 
-  // @Input() email : String = ""; 
-  // @Input() login : String = ""; 
+  @Input() prenom : String = ""; 
+  @Input() nom : String = ""; 
+  @Input() civilite : String = ""; 
+  @Input() adresse : String = ""; 
+  @Input() code_postal : Number = 0; 
+  @Input() ville : String = ""; 
+  @Input() telephone : Number = 0; 
+  @Input() email : String = ""; 
+  @Input() login : String = ""; 
   @Output() change: EventEmitter<String> = new EventEmitter<String>();
 
-  @Input() client: Object = {};
-
-  // prenom: "",
-  // nom: "",
-  // civilite: "",
-  // adresse: "",
-  // code_postal: 0,
-  // ville: "",
-  // telephone: 0,
-  // email: "",
-  // login: "",
-  // password: "",
-  // password_conf: "",
+  
 
   bonjour: String= "";
   recap_adresse: String= "";
@@ -42,7 +30,8 @@ export class Comp2Component implements OnInit {
   }
 
   clic () {
-    //this.change.emit( 'Bonjour ' + this.client.prenom);
+    this.change.emit( 'Bonjour ' + this.prenom + ' ' + this.nom + ' alias ' + this.login + '. Votre addresse : ' + this.adresse + ' ' + this.code_postal
+    + ' ' + this.ville + ". Email : " + this.email + '. Telephone : ' + this.telephone);
   }
 
 }
